@@ -6,79 +6,108 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="applicationTwo.TwoController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="applicationTwo.TwoController">
    <children>
-      <VBox prefHeight="600.0" prefWidth="174.0" spacing="10.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label text="Check Topping">
-               <font>
-                  <Font name="System Bold Italic" size="19.0" />
-               </font>
-            </Label>
-            <CheckBox fx:id="HanBox" mnemonicParsing="false" text="Ham" />
-            <CheckBox fx:id="PineappleBox" mnemonicParsing="false" text="Pineapple" />
-            <CheckBox fx:id="CheeseBox" mnemonicParsing="false" text="Cheese" />
-            <Button fx:id="OrderBtn" mnemonicParsing="false" onAction="#makeOrder" text="Order" />
-            <Label fx:id="PizzaOrderLabel" alignment="TOP_LEFT" prefHeight="130.0" prefWidth="186.0" text="Label" />
+            <VBox prefHeight="600.0" prefWidth="174.0" spacing="10.0">
+               <children>
+                  <Label text="Check Topping">
+                     <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="HanBox" mnemonicParsing="false" text="Ham" />
+                  <CheckBox fx:id="PineappleBox" mnemonicParsing="false" text="Pineapple" />
+                  <CheckBox fx:id="CheeseBox" mnemonicParsing="false" text="Cheese" />
+                  <Button fx:id="OrderBtn" mnemonicParsing="false" onAction="#makeOrder" text="Order" />
+                  <Label fx:id="PizzaOrderLabel" alignment="TOP_LEFT" prefHeight="130.0" prefWidth="186.0" text="Label" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="600.0" prefWidth="194.0" spacing="10.0">
+               <children>
+                  <Label text="ChoiceBox Object">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="ChoiceBox" prefWidth="150.0" />
+                  <Button fx:id="ChBtn" mnemonicParsing="false" onAction="#choiceBoxBtnPushed" text="Button" />
+                  <Label fx:id="ChLabel" prefHeight="142.0" prefWidth="180.0" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="600.0" prefWidth="114.0">
+               <children>
+                  <Label fx:id="ComboBoxLabel" text="Combo Box">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="ComboBox" onAction="#comboBoxUpdated" prefWidth="150.0" />
+                  <Label fx:id="CBLabel" alignment="TOP_LEFT" prefHeight="117.0" prefWidth="139.0" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="600.0" prefWidth="154.0">
+               <children>
+                  <Label text="Radio Box" textFill="#312c2c">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="r1" mnemonicParsing="false" onAction="#radioChange" text="1" />
+                  <RadioButton fx:id="r2" mnemonicParsing="false" onAction="#radioChange" text="2" />
+                  <RadioButton fx:id="r3" mnemonicParsing="false" onAction="#radioChange" text="3" />
+                  <RadioButton fx:id="r4" mnemonicParsing="false" onAction="#radioChange" text="4" />
+                  <Label fx:id="RLabel" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
          </children>
-         <HBox.margin>
-            <Insets />
-         </HBox.margin>
-         <padding>
-            <Insets left="10.0" />
-         </padding>
-      </VBox>
-      <VBox prefHeight="600.0" prefWidth="194.0" spacing="10.0">
+      </HBox>
+      <HBox layoutX="6.0" layoutY="416.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0">
          <children>
-            <Label text="ChoiceBox Object">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="ChoiceBox" prefWidth="150.0" />
-            <Button fx:id="ChBtn" mnemonicParsing="false" onAction="#choiceBoxBtnPushed" text="Button" />
-            <Label fx:id="ChLabel" prefHeight="142.0" prefWidth="180.0" text="Label" />
+            <VBox>
+               <children>
+                  <Label text="List View Object" />
+                  <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#listViewButtonPushed" text="Selected Golf " />
+               </children>
+            </StackPane>
+            <VBox>
+               <children>
+                  <Label text="Selected Object" />
+                  <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
          </children>
-         <padding>
-            <Insets left="10.0" />
-         </padding>
-      </VBox>
-      <VBox prefHeight="600.0" prefWidth="114.0">
-         <children>
-            <Label fx:id="ComboBoxLabel" text="Combo Box">
-               <font>
-                  <Font name="System Bold Italic" size="16.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="ComboBox" onAction="#comboBoxUpdated" prefWidth="150.0" />
-            <Label fx:id="CBLabel" alignment="TOP_LEFT" prefHeight="117.0" prefWidth="139.0" text="Label" />
-         </children>
-         <padding>
-            <Insets left="10.0" />
-         </padding>
-      </VBox>
-      <VBox prefHeight="600.0" prefWidth="154.0">
-         <children>
-            <Label text="Radio Box" textFill="#312c2c">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-            <RadioButton fx:id="r1" mnemonicParsing="false" onAction="#radioChange" text="1" />
-            <RadioButton fx:id="r2" mnemonicParsing="false" onAction="#radioChange" text="2" />
-            <RadioButton fx:id="r3" mnemonicParsing="false" onAction="#radioChange" text="3" />
-            <RadioButton fx:id="r4" mnemonicParsing="false" onAction="#radioChange" text="4" />
-            <Label fx:id="RLabel" text="Label" />
-         </children>
-         <padding>
-            <Insets left="10.0" />
-         </padding>
-      </VBox>
+      </HBox>
    </children>
-</HBox>
+</AnchorPane>
