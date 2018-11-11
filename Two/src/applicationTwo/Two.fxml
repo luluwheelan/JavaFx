@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="applicationTwo.TwoController">
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="applicationTwo.TwoController">
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -92,7 +92,11 @@
          <children>
             <VBox>
                <children>
-                  <Label text="List View Object" />
+                  <Label text="List View Object">
+                     <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                     </font>
+                  </Label>
                   <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </VBox>
@@ -103,8 +107,17 @@
             </StackPane>
             <VBox>
                <children>
-                  <Label text="Selected Object" />
+                  <Label text="Selected Object">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
                   <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="87.0" layoutY="94.0" mnemonicParsing="false" text="Go to a table view" />
+                     </children>
+                  </AnchorPane>
                </children>
             </VBox>
          </children>

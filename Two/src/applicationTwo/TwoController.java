@@ -1,7 +1,13 @@
 package applicationTwo;
 
+import java.io.IOException;
+
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -10,6 +16,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 
@@ -70,6 +77,25 @@ public class TwoController{
     private Label RLabel;
     
     private ToggleGroup flToggleGroup;
+    
+    //When this method is called , it will change the scene
+    public void changeScreenBtnPushed(ActionEvent event) {
+    	try {
+			Parent tableViewParent = FXMLLoader.load(getClass().getResource("TableView.fxml"));
+			Scene tableViewScene = new Scene(tableViewParent);
+			
+			//This line gets the stage information
+		
+			Stage window = (Stage)((Node)event.getScource()).getScene().getWindow();
+			window.setScene(tableViewScene);
+			window.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
+    }
     
     @FXML
     private void initialize() {
